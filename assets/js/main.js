@@ -303,7 +303,7 @@ form.addEventListener('submit', (e) => {
     selecionarLampadas.classList.remove("hide");
 });
 
-selectIluminacao.addEventListener('click', (e) => {
+form.addEventListener('reset', (e) => {
     e.preventDefault();
 
     const ambiente = selectAmbiente.value;

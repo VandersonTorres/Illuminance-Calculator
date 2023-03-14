@@ -12,7 +12,11 @@
 <body>
     <div class="container">
 
-        <h1> Cálculo de Iluminância </h1>
+        <h1> 
+            Cálculo de Iluminância 
+            <img src="http://www.sinergiacontadores.com.br/assets/img/lampada2.gif" width="60px" height="60px">
+        </h1>
+        
         <div id="execution">
             <form action="" method="post" id="form">
                 <label for="ambiente"> Ambiente:</label><br />
@@ -28,18 +32,19 @@
                 </select><br /><br />
 
                 <label for="iluminacao"> Tipo de Iluminação:</label><br />
-                <select type="click" name="iluminacao" class="iluminacao" required>
+                <select name="iluminacao" class="iluminacao" required>
                     <option value="">Selecione</option>
                     <option value="geral">Geral</option>
                     <option value="local">Local</option>
-                </select><br /><br />
+                </select><br />
+                <button type="reset" class="ajuda"><abbr title="O que é geral/ local?"> ? </abbr></button>
 
                 <p id="aviso"></p>
 
                 <label for="dimensao" id="dimensso">Insira o tamanho do seu ambiente (m²):</label><br />
                 <input type="number" class="dimensao" placeholder="Exemplo: 10" />
 
-                <button type="submit">Calcular</button>
+                <button type="submit" >Calcular</button>
             </form>
         </div>
 
@@ -48,7 +53,7 @@
         <div id="mostra-lampadas" class="hide">
             <form action="" method="post">
                 <label for="lampadas"> Selecione o tipo de Lâmpada:</label><br />
-                <select name="tipo-lampada" class="tipo-lampada">
+                <select name="tipo-lampada" class="tipo-lampada" required>
                     <option value="">Selecione</option>
                     <option value="incandescente">Incandescente</option>
                     <option value="halogena">Halógena</option>
@@ -56,7 +61,7 @@
                     <option value="led">LED</option>
                 </select><br /><br />
 
-                <button type="submit" class="btn">Continuar</button>
+                <button type="submit" class="btn">Continuar para Potência</button>
             </form>
         </div>
 

@@ -45,6 +45,10 @@ body {
     padding: 10px;
 }
 
+.container img {
+    margin-left: 60px;
+}
+
 /* FORM */
 
 form {
@@ -121,13 +125,14 @@ form .dimensao {
 
 #aviso {
     padding: 0 5px;
-    background-color: rgba(255, 255, 255, 0.603);
+    background-color: rgba(95, 106, 255, 0.288);
     width: fit-content;
-    margin: 0;
-    color: black;
+    margin: auto 30px;
+    color: rgb(255, 255, 255);
     font-size: small;
     font-weight: bolder;
     transform: translateY(-25px);
+    text-align: center;
 }
 
 #aviso2 {
@@ -178,6 +183,7 @@ form .dimensao {
 
 form button {
     padding: 5px;
+    font-weight: bolder;
 }
 
 .btn {
@@ -190,6 +196,15 @@ form button:hover {
     cursor: pointer;
     transition: 0.2s;
     transform: scale(1.05);
+}
+
+.ajuda {
+    font-size: small;
+    padding: 2px 4px;
+    margin-top: 10px;
+    background-color: rgba(6, 6, 143, 0.644);
+    color: #fff;
+    font-weight: bold;
 }
 
 .hide {
