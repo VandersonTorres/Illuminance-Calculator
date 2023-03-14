@@ -56,57 +56,6 @@ function defineLuxMedio() {
     };
 };
 
-function mostraAviso() {
-    const ambiente = selectAmbiente.value;
-    let iluminacao = selectIluminacao.value;
-    const mensagem = [
-        "Indicado para iluminação geral do Ambiente.",
-        "Indicado para iluminação focal (leitura, escrita, bordado, etc).",
-        "Indicado para iluminação focal (fogão, pia, mesa, etc).",
-        "Indicado para iluminação focal (cama, espelho, penteadeira, etc).",
-        "Indicado para iluminação focal (espelho).",
-        "Indicado para iluminação focal (plantas, decorações, armários, etc)."
-    ];
-
-    if (iluminacao === "geral") {
-        aviso.classList.remove("hide");
-        aviso.innerHTML = "";
-        const span = document.createElement("span");
-        span.innerHTML = mensagem[0];
-        aviso.appendChild(span);
-    } else if (ambiente === "sala" && iluminacao === "local") {
-        aviso.classList.remove("hide");
-        aviso.innerHTML = "";
-        const span = document.createElement("span");
-        span.innerHTML = mensagem[1];
-        aviso.appendChild(span);
-    } else if (ambiente === "cozinha" && iluminacao === "local") {
-        aviso.classList.remove("hide");
-        aviso.innerHTML = "";
-        const span = document.createElement("span");
-        span.innerHTML = mensagem[2];
-        aviso.appendChild(span);
-    } else if (ambiente === "quarto" && iluminacao === "local") {
-        aviso.classList.remove("hide");
-        aviso.innerHTML = "";
-        const span = document.createElement("span");
-        span.innerHTML = mensagem[3];
-        aviso.appendChild(span);
-    } else if (ambiente === "banheiro" && iluminacao === "local") {
-        aviso.classList.remove("hide");
-        aviso.innerHTML = "";
-        const span = document.createElement("span");
-        span.innerHTML = mensagem[4];
-        aviso.appendChild(span);
-    } else if (ambiente === "hall-escada-garagem" && iluminacao === "local") {
-        aviso.classList.remove("hide");
-        aviso.innerHTML = "";
-        const span = document.createElement("span");
-        span.innerHTML = mensagem[5];
-        aviso.appendChild(span);
-    };
-};
-
 function calculaLumens() {
     const dimensao = inputDimensao.value;
     const resultado = (defineLuxMedio() * dimensao);
@@ -357,7 +306,54 @@ form.addEventListener('submit', (e) => {
 selectIluminacao.addEventListener('click', (e) => {
     e.preventDefault();
 
-    mostraAviso();
+    const ambiente = selectAmbiente.value;
+    let iluminacao = selectIluminacao.value;
+    const mensagem = [
+        "Indicado para iluminação geral do Ambiente.",
+        "Indicado para iluminação focal (leitura, escrita, bordado, etc).",
+        "Indicado para iluminação focal (fogão, pia, mesa, etc).",
+        "Indicado para iluminação focal (cama, espelho, penteadeira, etc).",
+        "Indicado para iluminação focal (espelho).",
+        "Indicado para iluminação focal (plantas, decorações, armários, etc)."
+    ];
+
+    if (iluminacao === "geral") {
+        aviso.classList.remove("hide");
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
+        span.innerHTML = mensagem[0];
+        aviso.appendChild(span);
+    } else if (ambiente === "sala" && iluminacao === "local") {
+        aviso.classList.remove("hide");
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
+        span.innerHTML = mensagem[1];
+        aviso.appendChild(span);
+    } else if (ambiente === "cozinha" && iluminacao === "local") {
+        aviso.classList.remove("hide");
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
+        span.innerHTML = mensagem[2];
+        aviso.appendChild(span);
+    } else if (ambiente === "quarto" && iluminacao === "local") {
+        aviso.classList.remove("hide");
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
+        span.innerHTML = mensagem[3];
+        aviso.appendChild(span);
+    } else if (ambiente === "banheiro" && iluminacao === "local") {
+        aviso.classList.remove("hide");
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
+        span.innerHTML = mensagem[4];
+        aviso.appendChild(span);
+    } else if (ambiente === "hall-escada-garagem" && iluminacao === "local") {
+        aviso.classList.remove("hide");
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
+        span.innerHTML = mensagem[5];
+        aviso.appendChild(span);
+    };
 });
 
 selectTipoLampada.addEventListener('click', (e) => {
