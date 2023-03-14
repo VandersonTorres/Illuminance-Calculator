@@ -294,7 +294,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (!calculaLumens() || calculaLumens() <= 0) {
-        let msg = `Selecione e/ou Insira os dados corretamente!`;
+        let msg = `Insira um número válido (maior que zero).`;
         setResultado(msg);
         return;
     };
