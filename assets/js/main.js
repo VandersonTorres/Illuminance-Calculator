@@ -140,6 +140,12 @@ function verificaLampada() {
         potenciaHal.classList.add("hide");
         potenciaInc.classList.add("hide");
         potenciaLFC.classList.add("hide");
+
+    } else {
+        potenciaLED.classList.add("hide");
+        potenciaHal.classList.add("hide");
+        potenciaInc.classList.add("hide");
+        potenciaLFC.classList.add("hide");
     };
     return lampada;
 };
