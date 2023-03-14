@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Iluminância</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1> Cálculo de Iluminância </h1>
+        <div id="execution">
+            <form action="" method="post" id="form">
+                <label for="ambiente"> Ambiente:</label><br />
+                <select name="ambiente" class="ambiente">
+                    <option value="">Selecione</option>
+                    <option value="sala">Sala</option>
+                    <option value="cozinha">Cozinha</option>
+                    <option value="quarto">Quarto</option>
+                    <option value="banheiro">Banheiro</option>
+                    <option value="hall-escada-garagem">Hall</option>
+                    <option value="hall-escada-garagem">Escada</option>
+                    <option value="hall-escada-garagem">Garagem</option>
+                </select><br /><br />
+
+                <label for="iluminacao"> Tipo de Iluminação:</label><br />
+                <select type="click" name="iluminacao" class="iluminacao">
+                    <option value="">Selecione</option>
+                    <option value="geral">Geral</option>
+                    <option value="local">Local</option>
+                </select><br /><br />
+
+                <p id="aviso" class="hide"></p>
+
+                <label for="dimensao" id="dimensso">Insira o tamanho do seu ambiente (m²):</label><br />
+                <input type="number" class="dimensao" placeholder="Exemplo: 5" />
+
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
+
+        <div id="resultado" class="hide"></div>
+
+        <div id="mostra-lampadas" class="hide">
+            <form action="" method="post">
+                <label for="lampadas"> Selecione o tipo de Lâmpada:</label><br />
+                <select type="click" name="tipo-lampada" class="tipo-lampada">
+                    <option value="">Selecione</option>
+                    <option value="incandescente">Incandescente</option>
+                    <option value="halogena">Halógena</option>
+                    <option value="lfc">LFC</option>
+                    <option value="led">LED</option>
+                </select><br /><br />
+            </form>
+        </div>
+
+        <div id="potencia-incandescente" class="hide">
+            <form action="" method="post" id="form-inc">
+                <label for="watts-incandescente"> Selecione a Potência da Lâmpada Incandescente:</label><br />
+                <select type="click" name="potencia-incandescente" class="watts-incandescente">
+                    <option value="">Selecione</option>
+                    <option value="12-15w">12-15w</option>
+                    <option value="25w">25w</option>
+                    <option value="30w">30w</option>
+                    <option value="40w">40w</option>
+                    <option value="60w">60w</option>
+                    <option value="75w">75w</option>
+                    <option value="100w">100w</option>
+                    <option value="150w">150w</option>
+                </select>
+
+                <button type="submit" class="btn">Calcular</button>
+            </form>
+        </div>
+
+        <div id="potencia-halogena" class="hide">
+            <form action="" method="post" id="form-hal">
+                <label for="watts-halogena"> Selecione a Potência da Lâmpada Halógena:</label><br />
+                <select type="click" name="potencia-halogena" class="watts-halogena">
+                    <option value="">Selecione</option>
+                    <option value="18w">18w</option>
+                    <option value="25w">25w</option>
+                    <option value="35w">35w</option>
+                    <option value="42w">42w</option>
+                    <option value="70w">70w</option>
+                </select>
+
+                <button type="submit" class="btn">Calcular</button>
+            </form>
+        </div>
+
+        <div id="potencia-lfc" class="hide">
+            <form action="" method="post" id="form-lfc">
+                <label for="watts-lfc"> Selecione a Potência da  Lâmpada LFC:</label><br />
+                <select type="click" name="potencia-lfc" class="watts-lfc">
+                    <option value="">Selecione</option>
+                    <option value="5-6w">5-6w</option>
+                    <option value="7-9w">7-9w</option>
+                    <option value="9-13w">9-13w</option>
+                    <option value="13-15w">13-15w</option>
+                    <option value="18-23w">18-23w</option>
+                    <option value="25-30w">25-30w</option>
+                    <option value="30-52w">30-52w</option>
+                </select>
+
+                <button type="submit" class="btn">Calcular</button>
+            </form>
+        </div>
+
+        <div id="potencia-led" class="hide">
+            <form action="" method="post" id="form-led">
+                <label for="watts-led"> Selecione a Potência da Lâmpada LED:</label><br />
+                <select type="click" name="potencia-led" class="watts-led">
+                    <option value="">Selecione</option>
+                    <option value="1w">1w</option>
+                    <option value="3w">3w</option>
+                    <option value="4w">4w</option>
+                    <option value="6-9w">6-9w</option>
+                    <option value="8-12w">8-12w</option>
+                    <option value="13-15w">13-15w</option>
+                    <option value="16-20w">16-20w</option>
+                    <option value="25-28w">25-28w</option>
+                </select>
+                
+                <button type="submit" class="btn">Calcular</button>
+            </form>
+        </div>
+        <p id="aviso2" class="hide"></p>
+        <div id="final" class="hide"></div>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+/* GERAL */
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: auto;
+    font-family: "ubuntu", sans-serif;
+    border-radius: 10px;
+}
+
+@media (min-widht: 500px) and (max-width: 1024px){
+	* {
+		box-sizing: border-box;
+        margin: 16px;
+		padding: 10px;
+    }
+}
+
+body {
+    background-image: url("https://s3.a8se.com/storage/conteudo/6/34547/20130909100745_522dc8219b343.jpg");
+    background-repeat: no-repeat;
+    background-color: #afc0c9c2;
+    background-clip: content-box;
+    padding: 10px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-flow:column;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    height: fit-content;
+}
+
+.container {
+    height: fit-content;
+    background-color: #000000b6;
+    box-shadow: rgba(0, 0, 0, .24) 0px 3px 8px;
+    padding: 20px;
+    color: antiquewhite;
+}
+
+.container h1 {
+    padding: 10px;
+}
+
+/* FORM */
+
+form {
+    margin: 16px;
+    border: none;
+    outline: none;
+}
+
+#mostra-lampadas {
+    padding-top: 15px;
+    margin: 16px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.848) 0px 5px 10px;
+}
+
+#potencia-incandescente {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 16px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.848) 0px 5px 10px;
+}
+
+#potencia-halogena {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 16px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.848) 0px 5px 10px;
+}
+
+#potencia-lfc {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 16px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.848) 0px 5px 10px;
+}
+
+#potencia-led {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 16px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.848) 0px 5px 10px;
+}
+
+/* INPUTS */
+
+form .ambiente {
+    padding: 5px;
+    outline: none;
+    border: none;
+}
+
+form .iluminacao {
+    padding: 5px;
+    outline: none;
+    border: none;
+}
+
+form .dimensao {
+    padding: 5px;
+    outline: none;
+    border: none;
+}
+
+/* MENSAGENS NA TELA */
+
+#aviso {
+    padding: 0 5px;
+    background-color: rgba(255, 255, 255, 0.603);
+    width: fit-content;
+    margin: 0;
+    color: black;
+    font-size: small;
+    font-weight: bolder;
+    transform: translateY(-25px);
+}
+
+#aviso2 {
+    padding: 0 5px;
+    background-color: rgba(255, 255, 255, 0.603);
+    width: fit-content;
+    margin: 10px auto;
+    color: black;
+    font-size: small;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#resultado {
+    padding: 5px;
+    background-color: rgba(135, 228, 170, 0.603);
+    color: black;
+    font-size: smaller;
+    font-weight: bolder;
+    width: fit-content;
+    margin-bottom: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
+}
+
+#final {
+    padding: 5px;
+    background-color: rgba(135, 228, 170, 0.603);
+    color: black;
+    font-size: smaller;
+    font-weight: bolder;
+    width: fit-content;
+    margin-bottom: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+/* BOTÃO */
+
+form button {
+    padding: 5px;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+form button:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.hide {
+    display: none;
+}
