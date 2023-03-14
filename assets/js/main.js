@@ -350,7 +350,7 @@ selectIluminacao.addEventListener('click', (e) => {
     };
 });
 
-selectTipoLampada.addEventListener('click', (e) => {
+selecionarLampadas.addEventListener('submit', (e) => {
     e.preventDefault();
 
     verificaLampada();
