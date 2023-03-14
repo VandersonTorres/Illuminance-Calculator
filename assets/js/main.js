@@ -96,7 +96,7 @@ function verificaLampada() {
         potenciaInc.classList.add("hide");
         potenciaLFC.classList.add("hide");
     };
-    
+
     return lampada;
 };
 
@@ -161,11 +161,11 @@ function verificaPotencia() {
             return;
         };
 
-        if (calculaLumens() > 2600) {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
-            appendTextPotencia(msg, (calculo + 1));
+        if (calculaLumens() > 2601) {
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
+            appendTextPotencia(msg, Math.ceil(calculo));
         } else {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
             appendTextPotencia(msg, calculo);
         };
 
@@ -195,12 +195,12 @@ function verificaPotencia() {
             appendTextPotencia(msg);
             return;
         };
-        
-        if (calculaLumens() > 1100) {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
-            appendTextPotencia(msg, (calculo + 1));
+
+        if (calculaLumens() > 1101) {
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
+            appendTextPotencia(msg, Math.ceil(calculo));
         } else {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
             appendTextPotencia(msg, calculo);
         };
 
@@ -237,11 +237,11 @@ function verificaPotencia() {
             return;
         };
 
-        if (calculaLumens() > 2600) {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
-            appendTextPotencia(msg, (calculo + 1));
+        if (calculaLumens() > 2601) {
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
+            appendTextPotencia(msg, Math.ceil(calculo));
         } else {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
             appendTextPotencia(msg, calculo);
         };
 
@@ -280,12 +280,12 @@ function verificaPotencia() {
             appendTextPotencia(msg);
             return;
         };
-        
-        if (calculaLumens() > 2600) {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
-            appendTextPotencia(msg, (calculo + 1));
+
+        if (calculaLumens() > 2601) {
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
+            appendTextPotencia(msg, Math.ceil(calculo));
         } else {
-            let msg = "A quantidade necessária dessa lâmpada é de:";
+            let msg = "A quantidade recomendada para essa lâmpada é de:";
             appendTextPotencia(msg, calculo);
         };
     };
@@ -309,6 +309,8 @@ function mostraAviso2() {
             "150w": 2600
         };
         valorLumen = setLampada[verificaPotencia()];
+        aviso2.classList.remove("hide");
+        aviso2.innerHTML = "";
 
     } else if (verificaLampada() === "halogena") {
         setLampada = {
@@ -319,6 +321,8 @@ function mostraAviso2() {
             "70w": 1100
         };
         valorLumen = setLampada[verificaPotencia()];
+        aviso2.classList.remove("hide");
+        aviso2.innerHTML = "";
 
     } else if (verificaLampada() === "lfc") {
         setLampada = {
@@ -331,6 +335,8 @@ function mostraAviso2() {
             "30-52w": 2600
         };
         valorLumen = setLampada[verificaPotencia()];
+        aviso2.classList.remove("hide");
+        aviso2.innerHTML = "";
 
     } else if (verificaLampada() === "led") {
         setLampada = {
@@ -344,13 +350,14 @@ function mostraAviso2() {
             "25-28w": 2600
         };
         valorLumen = setLampada[verificaPotencia()];
+        aviso2.classList.remove("hide");
+        aviso2.innerHTML = "";
     };
 
-    aviso2.classList.remove("hide");
-    aviso2.innerHTML = "";
     const span = document.createElement("span");
     span.innerHTML = `Essa lâmpada possui em média ${valorLumen} lúmens cada.`;
     aviso2.appendChild(span);
+    return valorLumen;
 };
 
 function setResultado(msg) {
@@ -371,7 +378,7 @@ form.addEventListener('submit', (e) => {
         setResultado(msg);
         return;
     };
-    let msg = `A quantidade ideal de Lúmens para o seu ambiente é de: <mark> ${calculaLumens()}lm </mark>`;
+    let msg = `A quantidade média de Lúmens necessária para o seu ambiente é de: <mark> ${calculaLumens()}lm </mark>`;
     setResultado(msg);
     selecionarLampadas.classList.remove("hide");
 });
