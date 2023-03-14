@@ -306,8 +306,6 @@ form.addEventListener('submit', (e) => {
 selectIluminacao.addEventListener('click', (e) => {
     e.preventDefault();
 
-    aviso.innerHTML = "";
-    const span = document.createElement("span");
     const ambiente = selectAmbiente.value;
     let iluminacao = selectIluminacao.value;
     const mensagem = [
@@ -320,23 +318,41 @@ selectIluminacao.addEventListener('click', (e) => {
     ];
 
     if (iluminacao === "geral") {
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
         span.innerHTML = mensagem[0];
         aviso.appendChild(span);
+        aviso.classList.remove("hide");
     } else if (ambiente === "sala" && iluminacao === "local") {
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
         span.innerHTML = mensagem[1];
         aviso.appendChild(span);
+        aviso.classList.remove("hide");
     } else if (ambiente === "cozinha" && iluminacao === "local") {
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
         span.innerHTML = mensagem[2];
         aviso.appendChild(span);
+        aviso.classList.remove("hide");
     } else if (ambiente === "quarto" && iluminacao === "local") {
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
         span.innerHTML = mensagem[3];
         aviso.appendChild(span);
+        aviso.classList.remove("hide");
     } else if (ambiente === "banheiro" && iluminacao === "local") {
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
         span.innerHTML = mensagem[4];
         aviso.appendChild(span);
+        aviso.classList.remove("hide");
     } else if (ambiente === "hall-escada-garagem" && iluminacao === "local") {
+        aviso.innerHTML = "";
+        const span = document.createElement("span");
         span.innerHTML = mensagem[5];
         aviso.appendChild(span);
+        aviso.classList.remove("hide");
     };
 });
 
