@@ -147,7 +147,6 @@ function verificaLampada() {
         potenciaInc.classList.add("hide");
         potenciaLFC.classList.add("hide");
     };
-    return;
 };
 
 function appendTextPotencia(msg, calculo) {
