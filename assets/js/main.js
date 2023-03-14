@@ -354,7 +354,7 @@ form.addEventListener('submit', (e) => {
     selecionarLampadas.classList.remove("hide");
 });
 
-selectIluminacao.addEventListener('click', (e) => {
+selectIluminacao.addEventListener('menu', (e) => {
     e.preventDefault();
 
     mostraAviso();
