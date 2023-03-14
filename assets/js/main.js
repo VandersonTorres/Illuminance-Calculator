@@ -306,6 +306,7 @@ form.addEventListener('submit', (e) => {
 selectIluminacao.addEventListener('click', (e) => {
     e.preventDefault();
 
+    aviso.innerHTML = "";
     const span = document.createElement("span");
     const ambiente = selectAmbiente.value;
     let iluminacao = selectIluminacao.value;
