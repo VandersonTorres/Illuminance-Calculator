@@ -319,37 +319,31 @@ selectIluminacao.addEventListener('click', (e) => {
 
     if (iluminacao === "geral") {
         aviso.classList.remove("hide");
-        aviso.innerHTML = "";
         const span = document.createElement("span");
         span.innerHTML = mensagem[0];
         aviso.appendChild(span);
     } else if (ambiente === "sala" && iluminacao === "local") {
         aviso.classList.remove("hide");
-        aviso.innerHTML = "";
         const span = document.createElement("span");
         span.innerHTML = mensagem[1];
         aviso.appendChild(span);
     } else if (ambiente === "cozinha" && iluminacao === "local") {
         aviso.classList.remove("hide");
-        aviso.innerHTML = "";
         const span = document.createElement("span");
         span.innerHTML = mensagem[2];
         aviso.appendChild(span);
     } else if (ambiente === "quarto" && iluminacao === "local") {
         aviso.classList.remove("hide");
-        aviso.innerHTML = "";
         const span = document.createElement("span");
         span.innerHTML = mensagem[3];
         aviso.appendChild(span);
     } else if (ambiente === "banheiro" && iluminacao === "local") {
         aviso.classList.remove("hide");
-        aviso.innerHTML = "";
         const span = document.createElement("span");
         span.innerHTML = mensagem[4];
         aviso.appendChild(span);
     } else if (ambiente === "hall-escada-garagem" && iluminacao === "local") {
         aviso.classList.remove("hide");
-        aviso.innerHTML = "";
         const span = document.createElement("span");
         span.innerHTML = mensagem[5];
         aviso.appendChild(span);
