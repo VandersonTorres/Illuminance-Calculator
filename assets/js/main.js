@@ -141,7 +141,7 @@ function verificaLampada() {
         potenciaInc.classList.add("hide");
         potenciaLFC.classList.add("hide");
     };
-    return lampada;
+    return;
 };
 
 function verificaPotencia() {
