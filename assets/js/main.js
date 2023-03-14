@@ -158,7 +158,6 @@ function verificaPotencia() {
         if (!calculo || calculo <= 0) {
             let msg = "Selecione os dados corretamente!";
             appendTextPotencia(msg);
-            return;
         };
 
         if (calculaLumens() > 2601) {
@@ -193,7 +192,6 @@ function verificaPotencia() {
         if (!calculo || calculo <= 0) {
             let msg = "Selecione e/ou Insira os dados corretamente!";
             appendTextPotencia(msg);
-            return;
         };
 
         if (calculaLumens() > 1101) {
@@ -234,7 +232,6 @@ function verificaPotencia() {
         if (!calculo || calculo <= 0) {
             let msg = "Selecione e/ou Insira os dados corretamente!";
             appendTextPotencia(msg);
-            return;
         };
 
         if (calculaLumens() > 2601) {
@@ -278,7 +275,6 @@ function verificaPotencia() {
         if (!calculo || calculo <= 0) {
             let msg = "Selecione e/ou Insira os dados corretamente!";
             appendTextPotencia(msg);
-            return;
         };
 
         if (calculaLumens() > 2601) {
@@ -290,15 +286,24 @@ function verificaPotencia() {
         };
     };
 
-    return (wattsInc || wattsHal || wattsLFC || wattsLED);
+    return setLampada;
 };
 
-function mostraAviso2() {
+function verificaLumen() {
     let valorLumen;
-    let setLampada;
+    
+    const wattsInc = selectWattsInc.value;
+    const wattsHal = selectWattsHal.value;
+    const wattsLFC = selectWattsLFC.value;
+    const wattsLED = selectWattsLED.value;
+
+    let incandescente;
+    let halogena;
+    let lfc;
+    let led;
 
     if (verificaLampada() === "incandescente") {
-        setLampada = {
+        incandescente = {
             "12-15w": 90,
             "25w": 270,
             "30w": 360,
@@ -308,24 +313,20 @@ function mostraAviso2() {
             "100w": 1600,
             "150w": 2600
         };
-        valorLumen = setLampada[verificaPotencia()];
-        aviso2.classList.remove("hide");
-        aviso2.innerHTML = "";
+        valorLumen = incandescente[wattsInc];
 
     } else if (verificaLampada() === "halogena") {
-        setLampada = {
+        halogena = {
             "18w": 270,
             "25w": 360,
             "35w": 450,
             "42w": 800,
             "70w": 1100
         };
-        valorLumen = setLampada[verificaPotencia()];
-        aviso2.classList.remove("hide");
-        aviso2.innerHTML = "";
+        valorLumen = halogena[wattsHal];
 
     } else if (verificaLampada() === "lfc") {
-        setLampada = {
+        lfc = {
             "5-6w": 270,
             "7-9w": 360,
             "9-13w": 450,
@@ -334,12 +335,10 @@ function mostraAviso2() {
             "25-30w": 1600,
             "30-52w": 2600
         };
-        valorLumen = setLampada[verificaPotencia()];
-        aviso2.classList.remove("hide");
-        aviso2.innerHTML = "";
+        valorLumen = lfc[wattsLFC];
 
     } else if (verificaLampada() === "led") {
-        setLampada = {
+        led = {
             "1w": 90,
             "3w": 270,
             "4w": 360,
@@ -349,14 +348,9 @@ function mostraAviso2() {
             "16-20w": 1600,
             "25-28w": 2600
         };
-        valorLumen = setLampada[verificaPotencia()];
-        aviso2.classList.remove("hide");
-        aviso2.innerHTML = "";
+        valorLumen = led[wattsLED];
     };
 
-    const span = document.createElement("span");
-    span.innerHTML = `Essa lâmpada possui em média ${valorLumen} lúmens cada.`;
-    aviso2.appendChild(span);
     return valorLumen;
 };
 
@@ -366,6 +360,14 @@ function setResultado(msg) {
     const paragrafo = document.createElement("p");
     paragrafo.innerHTML = msg;
     resultado.appendChild(paragrafo);
+};
+
+function mostraAviso2(msg) {
+    aviso2.classList.remove("hide");
+    aviso2.innerHTML = "";
+    const span = document.createElement("span");
+    span.innerHTML = msg;
+    aviso2.appendChild(span);
 };
 
 // EVENTOS
@@ -440,26 +442,50 @@ potenciaInc.addEventListener('submit', (e) => {
     e.preventDefault();
 
     verificaPotencia();
-    mostraAviso2()
+    if (!verificaLumen()) {
+        let msg = "Selecione os dados corretamente.";
+        mostraAviso2(msg);
+        return;
+    };
+    let msg = `Essa lâmpada possui em média ${verificaLumen()} lúmens cada.`;
+    mostraAviso2(msg);
 });
 
 potenciaHal.addEventListener('submit', (e) => {
     e.preventDefault();
 
     verificaPotencia();
-    mostraAviso2()
+    if (!verificaLumen()) {
+        let msg = "Selecione os dados corretamente.";
+        mostraAviso2(msg);
+        return;
+    };
+    let msg = `Essa lâmpada possui em média ${verificaLumen()} lúmens cada.`;
+    mostraAviso2(msg);
 });
 
 potenciaLFC.addEventListener('submit', (e) => {
     e.preventDefault();
 
     verificaPotencia();
-    mostraAviso2()
+    if (!verificaLumen()) {
+        let msg = "Selecione os dados corretamente.";
+        mostraAviso2(msg);
+        return;
+    };
+    let msg = `Essa lâmpada possui em média ${verificaLumen()} lúmens cada.`;
+    mostraAviso2(msg);
 });
 
 potenciaLED.addEventListener('submit', (e) => {
     e.preventDefault();
 
     verificaPotencia();
-    mostraAviso2()
+    if (!verificaLumen()) {
+        let msg = "Selecione os dados corretamente.";
+        mostraAviso2(msg);
+        return;
+    };
+    let msg = `Essa lâmpada possui em média ${verificaLumen()} lúmens cada.`;
+    mostraAviso2(msg);
 });
