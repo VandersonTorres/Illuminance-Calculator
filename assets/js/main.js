@@ -158,8 +158,14 @@ function verificaPotencia() {
             appendTextPotencia(msg);
             return;
         };
-        let msg = "A quantidade necessária de lâmpadas é de:";
-        appendTextPotencia(msg, calculo);
+
+        if (calculaLumens() > 2600) {
+            let msg = "A quantidade necessária de lâmpadas é de:";
+            appendTextPotencia(msg, (calculo + 1));
+        } else {
+            let msg = "A quantidade necessária de lâmpadas é de:";
+            appendTextPotencia(msg, calculo);
+        };
 
     } else if (lampada === "halogena") {
         setLampada = {
@@ -222,8 +228,14 @@ function verificaPotencia() {
             appendTextPotencia(msg);
             return;
         };
-        let msg = "A quantidade necessária de lâmpadas é de:";
-        appendTextPotencia(msg, calculo);
+
+        if (calculaLumens() > 2600) {
+            let msg = "A quantidade necessária de lâmpadas é de:";
+            appendTextPotencia(msg, (calculo + 1));
+        } else {
+            let msg = "A quantidade necessária de lâmpadas é de:";
+            appendTextPotencia(msg, calculo);
+        };
 
     } else if (lampada === "led") {
         setLampada = {
@@ -260,15 +272,27 @@ function verificaPotencia() {
             appendTextPotencia(msg);
             return;
         };
-        let msg = "A quantidade necessária de lâmpadas é de:";
-        appendTextPotencia(msg, calculo);
+        
+        if (calculaLumens() > 2600) {
+            let msg = "A quantidade necessária de lâmpadas é de:";
+            appendTextPotencia(msg, (calculo + 1));
+        } else {
+            let msg = "A quantidade necessária de lâmpadas é de:";
+            appendTextPotencia(msg, calculo);
+        };
     };
 
     return Math.round(calculo);
 };
 
 function mostraAviso2() {
-    const calculo = calculaLumens() / verificaPotencia();
+    let calculo;
+
+    if (calculaLumens() > 2600) {
+        calculo = calculaLumens() / (verificaPotencia() + 1);
+    } else {
+        calculo = calculaLumens() / verificaPotencia();
+    }
 
     aviso2.classList.remove("hide");
     aviso2.innerHTML = "";
