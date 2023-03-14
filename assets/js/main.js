@@ -306,7 +306,7 @@ form.addEventListener('submit', (e) => {
 selectIluminacao.addEventListener('click', (e) => {
     e.preventDefault();
 
-    aviso.innerHTML = "";
+    const span = document.createElement("span");
     const ambiente = selectAmbiente.value;
     let iluminacao = selectIluminacao.value;
     const mensagem = [
@@ -319,27 +319,21 @@ selectIluminacao.addEventListener('click', (e) => {
     ];
 
     if (iluminacao === "geral") {
-        const span = document.createElement("span");
         span.innerHTML = mensagem[0];
         aviso.appendChild(span);
     } else if (ambiente === "sala" && iluminacao === "local") {
-        const span = document.createElement("span");
         span.innerHTML = mensagem[1];
         aviso.appendChild(span);
     } else if (ambiente === "cozinha" && iluminacao === "local") {
-        const span = document.createElement("span");
         span.innerHTML = mensagem[2];
         aviso.appendChild(span);
     } else if (ambiente === "quarto" && iluminacao === "local") {
-        const span = document.createElement("span");
         span.innerHTML = mensagem[3];
         aviso.appendChild(span);
     } else if (ambiente === "banheiro" && iluminacao === "local") {
-        const span = document.createElement("span");
         span.innerHTML = mensagem[4];
         aviso.appendChild(span);
     } else if (ambiente === "hall-escada-garagem" && iluminacao === "local") {
-        const span = document.createElement("span");
         span.innerHTML = mensagem[5];
         aviso.appendChild(span);
     };
