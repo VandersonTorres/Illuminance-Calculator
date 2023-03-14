@@ -96,6 +96,8 @@ function verificaLampada() {
         potenciaInc.classList.add("hide");
         potenciaLFC.classList.add("hide");
     };
+    
+    return lampada;
 };
 
 function appendTextPotencia(msg, calculo) {
@@ -107,7 +109,7 @@ function appendTextPotencia(msg, calculo) {
         final.appendChild(paragrafo);
         return;
     };
-    paragrafo.innerHTML = `${msg} "${Math.round(calculo)}".`;
+    paragrafo.innerHTML = `${msg} "${Math.round(calculo)}" unidade(s).`;
     final.appendChild(paragrafo);
 };
 
@@ -160,10 +162,10 @@ function verificaPotencia() {
         };
 
         if (calculaLumens() > 2600) {
-            let msg = "A quantidade necessária de lâmpadas é de:";
+            let msg = "A quantidade necessária dessa lâmpada é de:";
             appendTextPotencia(msg, (calculo + 1));
         } else {
-            let msg = "A quantidade necessária de lâmpadas é de:";
+            let msg = "A quantidade necessária dessa lâmpada é de:";
             appendTextPotencia(msg, calculo);
         };
 
@@ -193,8 +195,14 @@ function verificaPotencia() {
             appendTextPotencia(msg);
             return;
         };
-        let msg = "A quantidade necessária de lâmpadas é de:";
-        appendTextPotencia(msg, calculo);
+        
+        if (calculaLumens() > 1100) {
+            let msg = "A quantidade necessária dessa lâmpada é de:";
+            appendTextPotencia(msg, (calculo + 1));
+        } else {
+            let msg = "A quantidade necessária dessa lâmpada é de:";
+            appendTextPotencia(msg, calculo);
+        };
 
     } else if (lampada === "lfc") {
         setLampada = {
@@ -230,10 +238,10 @@ function verificaPotencia() {
         };
 
         if (calculaLumens() > 2600) {
-            let msg = "A quantidade necessária de lâmpadas é de:";
+            let msg = "A quantidade necessária dessa lâmpada é de:";
             appendTextPotencia(msg, (calculo + 1));
         } else {
-            let msg = "A quantidade necessária de lâmpadas é de:";
+            let msg = "A quantidade necessária dessa lâmpada é de:";
             appendTextPotencia(msg, calculo);
         };
 
@@ -274,33 +282,74 @@ function verificaPotencia() {
         };
         
         if (calculaLumens() > 2600) {
-            let msg = "A quantidade necessária de lâmpadas é de:";
+            let msg = "A quantidade necessária dessa lâmpada é de:";
             appendTextPotencia(msg, (calculo + 1));
         } else {
-            let msg = "A quantidade necessária de lâmpadas é de:";
+            let msg = "A quantidade necessária dessa lâmpada é de:";
             appendTextPotencia(msg, calculo);
         };
     };
 
-    return Math.round(calculo);
+    return (wattsInc || wattsHal || wattsLFC || wattsLED);
 };
 
 function mostraAviso2() {
-    let calculo;
+    let valorLumen;
+    let setLampada;
 
-    if (calculaLumens() > 2600) {
-        calculo = calculaLumens() / (verificaPotencia() + 1);
-    } else {
-        calculo = calculaLumens() / verificaPotencia();
-    }
+    if (verificaLampada() === "incandescente") {
+        setLampada = {
+            "12-15w": 90,
+            "25w": 270,
+            "30w": 360,
+            "40w": 450,
+            "60w": 800,
+            "75w": 1100,
+            "100w": 1600,
+            "150w": 2600
+        };
+        valorLumen = setLampada[verificaPotencia()];
+
+    } else if (verificaLampada() === "halogena") {
+        setLampada = {
+            "18w": 270,
+            "25w": 360,
+            "35w": 450,
+            "42w": 800,
+            "70w": 1100
+        };
+        valorLumen = setLampada[verificaPotencia()];
+
+    } else if (verificaLampada() === "lfc") {
+        setLampada = {
+            "5-6w": 270,
+            "7-9w": 360,
+            "9-13w": 450,
+            "13-15w": 800,
+            "18-23w": 1100,
+            "25-30w": 1600,
+            "30-52w": 2600
+        };
+        valorLumen = setLampada[verificaPotencia()];
+
+    } else if (verificaLampada() === "led") {
+        setLampada = {
+            "1w": 90,
+            "3w": 270,
+            "4w": 360,
+            "6-9w": 450,
+            "8-12w": 800,
+            "13-15w": 1100,
+            "16-20w": 1600,
+            "25-28w": 2600
+        };
+        valorLumen = setLampada[verificaPotencia()];
+    };
 
     aviso2.classList.remove("hide");
     aviso2.innerHTML = "";
     const span = document.createElement("span");
-    if (!calculo || calculo === Infinity) {
-        return;
-    };
-    span.innerHTML = `Essa lâmpada possui em média ${Math.round(calculo)} lúmens cada.`;
+    span.innerHTML = `Essa lâmpada possui em média ${valorLumen} lúmens cada.`;
     aviso2.appendChild(span);
 };
 
