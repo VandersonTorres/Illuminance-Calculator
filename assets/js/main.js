@@ -160,12 +160,12 @@ function verificaPotencia() {
             appendTextPotencia(msg);
         };
 
-        if (calculaLumens() > 2601) {
-            let msg = "A quantidade recomendada para essa lâmpada é de:";
+        if (calculo <= 0.49) {
+            let msg = "Você pode usar uma potência menor, ou ";
             appendTextPotencia(msg, Math.ceil(calculo));
         } else {
             let msg = "A quantidade recomendada para essa lâmpada é de:";
-            appendTextPotencia(msg, calculo);
+            appendTextPotencia(msg, Math.ceil(calculo));
         };
 
     } else if (lampada === "halogena") {
@@ -194,12 +194,12 @@ function verificaPotencia() {
             appendTextPotencia(msg);
         };
 
-        if (calculaLumens() > 1101) {
-            let msg = "A quantidade recomendada para essa lâmpada é de:";
+        if (calculo <= 0.49) {
+            let msg = "Você pode usar uma potência menor, ou ";
             appendTextPotencia(msg, Math.ceil(calculo));
         } else {
             let msg = "A quantidade recomendada para essa lâmpada é de:";
-            appendTextPotencia(msg, calculo);
+            appendTextPotencia(msg, Math.ceil(calculo));
         };
 
     } else if (lampada === "lfc") {
@@ -234,12 +234,12 @@ function verificaPotencia() {
             appendTextPotencia(msg);
         };
 
-        if (calculaLumens() > 2601) {
-            let msg = "A quantidade recomendada para essa lâmpada é de:";
+        if (calculo <= 0.49) {
+            let msg = "Você pode usar uma potência menor, ou ";
             appendTextPotencia(msg, Math.ceil(calculo));
         } else {
             let msg = "A quantidade recomendada para essa lâmpada é de:";
-            appendTextPotencia(msg, calculo);
+            appendTextPotencia(msg, Math.ceil(calculo));
         };
 
     } else if (lampada === "led") {
@@ -277,12 +277,12 @@ function verificaPotencia() {
             appendTextPotencia(msg);
         };
 
-        if (calculaLumens() > 2601) {
-            let msg = "A quantidade recomendada para essa lâmpada é de:";
+        if (calculo <= 0.49) {
+            let msg = "Você pode usar uma potência menor, ou ";
             appendTextPotencia(msg, Math.ceil(calculo));
         } else {
             let msg = "A quantidade recomendada para essa lâmpada é de:";
-            appendTextPotencia(msg, calculo);
+            appendTextPotencia(msg, Math.ceil(calculo));
         };
     };
 
